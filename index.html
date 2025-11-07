@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calyrax — AI Tenant Intelligence</title>
+  <meta name="description" content="Calyrax turns tenant applications into instant clarity. Upload rental PDFs and get a decision-ready summary plus structured data synced to your sheet."/>
+  <style>
+    :root{
+      --brand:#1d4ed8;
+      --brand2:#22d3ee;
+      --ink:#0f172a;
+      --muted:#475569;
+      --panel:#0b1220;
+      --glass: rgba(15,23,42,0.55);
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 10px 40px rgba(2,6,23,0.18);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ink); background:#ffffff}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1140px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,0.8);border-bottom:1px solid #e2e8f0;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{font-weight:800;font-size:20px;letter-spacing:.2px;background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .cta{display:inline-flex;gap:8px;align-items:center;background:var(--brand);color:#fff;border:0;padding:12px 18px;border-radius:12px;box-shadow:0 6px 24px rgba(29,78,216,.25);font-weight:600}
+    .cta:hover{background:#1640b5}
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:
+      radial-gradient(900px 500px at 10% -10%, rgba(29,78,216,.12), transparent),
+      radial-gradient(900px 500px at 90% -10%, rgba(34,211,238,.12), transparent),
+      linear-gradient(#ffffff,#f8fafc)
+    ;}
+    .hero .wrap{padding:84px 0 40px;text-align:center}
+    h1{margin:0;font-size:44px;line-height:1.05;letter-spacing:-.02em}
+    .sub{margin:14px auto 0;max-width:760px;color:var(--muted);font-size:18px;line-height:1.6}
+    .shimmer{
+      position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(1200px 200px at 50% -10%, rgba(34,211,238,.25), transparent);
+      opacity:.6;animation:pulse 6s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.7}}
+    .badge{margin:18px auto 0;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#334155;font-weight:600;font-size:12px;border:1px solid #e2e8f0}
+    .btnrow{margin:26px auto 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-sec{border:1px solid #e2e8f0;color:#0f172a;background:#fff;padding:12px 18px;border-radius:12px;font-weight:600}
+    .btn-sec:hover{background:#f8fafc}
+    /* Trusted */
+    .trusted{margin:36px auto 0;color:#64748b;font-size:12px}
+    .logos{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+    .logo-pill{border:1px solid #e2e8f0;border-radius:999px;padding:10px 14px;background:#fff;color:#0f172a;font-weight:600;box-shadow:0 2px 10px rgba(2,6,23,.06)}
+    /* Feature glass section (dark) */
+    .glass-section{background:linear-gradient(#0b1220,#0c1323);color:#e2e8f0;padding:70px 0;border-top:1px solid #0e172a;border-bottom:1px solid #0e172a}
+    .glass-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    @media (max-width:900px){.glass-grid{grid-template-columns:1fr}}
+    .card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:10px 0 6px;color:#fff}
+    .card p{margin:0;color:#b6c2d9}
+    .icon{font-size:22px}
+    /* Demo section (light) */
+    .demo{background:#f8fafc;padding:70px 0;border-top:1px solid #e2e8f0}
+    .panel{background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 10px 40px rgba(2,6,23,.08);overflow:hidden}
+    iframe{width:100%;height:520px;border:0}
+    /* Testimonial small */
+    .quote{margin-top:28px;color:#475569;font-style:italic}
+    .quote b{color:#0f172a}
+    /* FAQ */
+    .faq{padding:60px 0;background:#ffffff}
+    .faq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    @media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+    .faq .q{border:1px solid #e2e8f0;border-radius:16px;padding:18px;background:#fff;box-shadow:0 2px 8px rgba(2,6,23,.04)}
+    .q h4{margin:0 0 6px}
+    .q p{margin:0;color:#475569}
+    /* Footer */
+    footer{border-top:1px solid #e2e8f0;background:#fbfdff}
+    .foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:24px 0;color:#64748b;font-size:14px}
+    .support a{color:var(--brand);font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Calyrax</div>
+      <div class="nav-cta">
+        <a href="#try" class="cta">Try Calyrax Free →</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="shimmer"></div>
+    <div class="container wrap">
+      <h1>Turn Tenant Applications <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">Into Instant Clarity</span></h1>
+      <p class="sub">Calyrax reads every rental PDF and delivers a clean, decision‑ready summary — with structured data synced to your sheet. No setup, no chaos.</p>
+      <div class="btnrow">
+        <a href="#try" class="cta">Upload a PDF</a>
+        <a href="#how" class="btn-sec">See how it works</a>
+      </div>
+      <div class="trusted">Trusted by early property pros</div>
+      <div class="logos" aria-label="Trusted logos">
+        <div class="logo-pill">Oakview Realty</div>
+        <div class="logo-pill">MetroLiving</div>
+        <div class="logo-pill">KeyNest</div>
+        <div class="logo-pill">North & Co.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="glass-section">
+    <div class="container">
+      <div class="glass-grid">
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>AI summaries that make sense</h3>
+          <p>Readable, decision‑ready email with contact info, income, and references — instantly.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Instant data in Sheets</h3>
+          <p>We structure the key fields and sync to your Google Sheet with zero setup.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>Zero setup, pure insight</h3>
+          <p>Upload a PDF and you’re done — no logins, no training, just clarity.</p>
+        </div>
+      </div>
+      <div class="container" style="margin-top:28px;text-align:center;max-width:900px">
+        <div class="quote">“Built for property pros who want <b>clarity</b>, not clutter.”</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="try" class="demo">
+    <div class="container" style="text-align:center">
+      <h2 style="margin:0;font-size:34px">Try Calyrax</h2>
+      <p class="sub" style="margin-top:10px">Upload a tenant application PDF — get your AI‑generated summary in under a minute.</p>
+      <div class="panel" style="margin-top:26px">
+        <iframe src="https://tally.so/embed/1APdgQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" title="Calyrax Upload Form"></iframe>
+      </div>
+      <div class="support" style="margin-top:14px;font-size:14px;color:#64748b">Need help? Contact <a href="mailto:support@calyrax.com">support@calyrax.com</a></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="q">
+          <h4>Is it free to try?</h4>
+          <p>Yes — during the pilot you can test Calyrax for free.</p>
+        </div>
+        <div class="q">
+          <h4>Do I need an account?</h4>
+          <p>No. Upload a PDF and enter your email — that’s it.</p>
+        </div>
+        <div class="q">
+          <h4>Can it update my own Google Sheet?</h4>
+          <p>Yes — we can connect directly to your sheet in onboarding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>© 2025 Calyrax — Tenant Intelligence, Simplified</div>
+      <div class="support">Contact: <a href="mailto:support@calyrax.com">support@calyrax.com</a></div>
+    </div>
+  </footer>
+</body>
+</html>
