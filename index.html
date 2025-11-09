@@ -153,7 +153,14 @@ background:linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%); box-shadow:0 2px 3
 <p>Upload a tenant application PDF — get your AI-generated summary in under a minute.</p>
 <p style="color:#666; margin-top:8px;">No setup. No training. Just upload and we’ll handle the rest.</p>
 
-        <iframe src="https://tally.so/embed/1APdgQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" title="Calyrax Upload Form"></iframe>
+       <iframe
+  src="https://tally.so/embed/14p0g2q?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+  width="100%"
+  height="800"
+  title="Calyrax Upload Form"
+  style="min-height: 750px; max-height: 90vh; overflow: visible; border: none;"
+  allow="fullscreen"
+></iframe>
       </div>
       <div class="support" style="margin-top:14px;font-size:14px;color:#64748b">Need help? Contact <a href="mailto:support@calyrax.com">support@calyrax.com</a></div>
     </div>
@@ -210,6 +217,20 @@ footer {
   text-align: center;
   color: #666;
 }
+  
+  /* --- Fix Tally embed height + smooth scroll --- */
+iframe[src*="tally.so"] {
+  height: 800px !important;
+  max-height: 90vh;
+  overflow: visible !important;
+  border: none;
+  transition: height 0.3s ease;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
 </style>
 
 </body>
