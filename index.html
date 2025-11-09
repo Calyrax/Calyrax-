@@ -218,14 +218,28 @@ footer {
   color: #666;
 }
   
-  /* Reduce space below the Tally form */
+/* --- Fix excess gap below the Tally form --- */
+section#try iframe {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 0 !important;
+}
+
 section#try {
   margin-bottom: 0 !important;
-  padding-bottom: 10px !important;
+  padding-bottom: 0 !important;
+}
+
+section#try + .faq {
+  margin-top: 0 !important;
 }
 
 section#try .support {
-  margin-top: 4px !important;
+  margin-top: -40px !important;
+  padding-top: 0 !important;
+  font-size: 12px !important;
+  color: #777 !important;
+  text-align: center;
 }
 
 </style>
