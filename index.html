@@ -153,17 +153,33 @@ background:linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%); box-shadow:0 2px 3
     <p style="color:#666; margin-top:8px;">Upload a tenant application PDF — get your AI-generated summary in under a minute.</p>
     <p style="color:#666;">No setup. No training. Just upload and we’ll handle the rest.</p>
 
-    <iframe 
-      src="https://tally.so/embed/1APdgQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-      width="100%" 
-      title="Calyrax Upload Form"
-      style="border:none; max-width:800px; margin:0 auto; display:block; overflow:hidden; border-radius:8px; min-height:550px;"
-      allowfullscreen>
-    </iframe>
+   <div id="tally-form" style="max-width:800px; margin:0 auto;">
+  <iframe
+    data-tally-src="https://tally.so/embed/1APdgQ?alignLeft=1&hideTitle=1&transparentBackground=1"
+    width="100%"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Calyrax Upload Form"
+    style="border:none; border-radius:8px; display:block; min-height:550px; overflow:hidden;"
+    allowfullscreen>
+  </iframe>
+</div>
 
-    <div class="support" style="margin-top:-40px; font-size:12px; color:#777; text-align:center; position:relative; z-index:10;">
-      Need help? Contact <a href="mailto:support@calyrax.com">support@calyrax.com</a>
-    </div>
+<script>
+  // Tally official embed script for full dynamic resizing
+  (function(){
+    var d=document, w="https://tally.so/widgets/embed.js";
+    if(!d.querySelector(`script[src="${w}"]`)){
+      var s=d.createElement("script");
+      s.src=w; s.async=true; d.body.appendChild(s);
+    }
+  })();
+</script>
+
+<div class="support" style="margin-top:20px; font-size:12px; color:#777; text-align:center;">
+  Need help? Contact <a href="mailto:support@calyrax.com">support@calyrax.com</a>
+</div>
   </div>
 </section>
 
